@@ -1,4 +1,5 @@
 <?php
+    
     function ligardb(){
         $servername = "localhost";
         $username = "root";
@@ -6,6 +7,8 @@
         $db_name = "crud";
 
         // Create connection
+        global $conn;
+
         $conn = new mysqli($servername, $username, $password, $db_name);
 
         // Check connection
@@ -14,6 +17,7 @@
         }
 
         debug("Connected successfully");
+
     }
     
     
@@ -22,6 +26,6 @@
             if (is_array($output))
                 $output = implode(',', $output);
 
-            echo "<script>console.log('Debug Objects: " . $output . "' );</script>"; 
+            echo "<script>console.log('Debug: " . $output . "' );</script>"; 
     }
 ?>

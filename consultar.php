@@ -2,13 +2,7 @@
     require 'funcoes.php';
 
     ligardb();
-
-    $sql = "SELECT * FROM `test` where ativo = 1";
-
-    $result = mysqli_query($conn, $sql);
-
 ?>
-
 <html>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +24,17 @@
 
     <h1>Tabela de Utilizadores</h1>
 
+    <?php 
+
+    $sql = "SELECT * FROM test WHERE ativo = 1";
+
+    $result = mysqli_query($conn, $sql);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo $row['nome'] . " --- " . $row['ativo'] . "<br>";
+    }
+
+?>
 
 
 
