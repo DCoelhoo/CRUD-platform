@@ -27,20 +27,9 @@ echo "Connected successfully";
     <h1 id="title">Formulário</h1>
         <div class="master-div-style">
             <p id="description">Preencha todos os campos do Formulário.</p>
-            <form id="survey-form" action="mailto:coelho.diogogoncalves@gmail.com">
-                <div class="form-rows">
-                    <div class="labels">
-                        <label for="name" id="name-label">Nome</label>
-                    </div>
-                    <div class="fields">
-                        <input type="text" id="name" class="input-fields" placeholder="Escreva o seu nome completo"
-                            required>
-                    </div>
-                </div>
-                
-                </div>
-                <button class="button" id="submit" type="submit">Submit</button>
-                <button class="button" id="submit" type="reset">Reset</button>
+            <form action="insert.php" method="get">
+                Name: <input type="text" name="name">
+                <input type="submit">
             </form>
         </div>
     </main>
