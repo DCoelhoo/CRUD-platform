@@ -8,6 +8,7 @@ ligardb();
 <html>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,12 +18,12 @@ ligardb();
 </head>
 
 <body>
-    
+
     <!--Navbar-->
     <div class="navbar" id="navbar">
         <a href="index.php">Home</a>
         <a class="active" href="consultar.php">Consultar Utilizadores</a>
-        <a href="#basketball">Basketball</a>
+        <a href="inserir.php">Inserir Utilizadores</a>
     </div>
 
     <h1>Página Inicial</h1>
@@ -31,5 +32,7 @@ ligardb();
 
     </main>
 </body>
+
 </html>
+
 </html>

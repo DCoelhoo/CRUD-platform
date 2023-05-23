@@ -6,6 +6,7 @@
 <html>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +16,7 @@
 </head>
 
 <body>
-        <!--Navbar-->
+    <!--Navbar-->
     <div class="navbar" id="navbar">
         <a class="active" href="index.php">Home</a>
         <a href="consultar.php">Consultar Utilizadores</a>
@@ -34,11 +35,13 @@
         echo $row['nome'] . " --- " . $row['ativo'] . "<br>";
     }
 
-?>
+    ?>
 
 
 
     </main>
 </body>
+
 </html>
+
 </html>

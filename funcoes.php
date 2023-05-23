@@ -6,7 +6,7 @@
         $password = "usbw";
         $db_name = "crud";
 
-        // Create connection
+        // Meter a variavel "global" para conseguir ser acessada em outros ficheiros       global $conn;
         global $conn;
 
         $conn = new mysqli($servername, $username, $password, $db_name);
