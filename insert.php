@@ -8,6 +8,8 @@
 <body>
         <?php
  
+        require 'funcoes.php';
+
         $servername = "localhost";
         $username = "root";
         $password = "usbw";
@@ -20,21 +22,18 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        echo "Connected successfully";
          
         $name = $_GET['name'];
 
-        echo $name;
-
-        $sql = "INSERT INTO test (nome) VALUES ('$name')";
+        $sql = "INSERT INTO test (nome, ativo) VALUES ('$name', '1')";
 
         if (mysqli_query($conn, $sql)) {
-            echo "Consulta executada com sucesso.";
+            debug("Insert executada com sucesso.");
         } else {
-            echo "Erro ao executar a consulta: " . mysqli_error($conn);
+            debug("Erro ao executar a consulta: " . mysqli_error($conn));
         }
         
-        mysqli_close($conn);
+        mysqli_close($conn);    
         ?>
 </body>
  
