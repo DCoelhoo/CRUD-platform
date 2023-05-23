@@ -26,7 +26,7 @@
  }
  
  mysqli_close($conn);    
- ?>
+?>
 
 <!DOCTYPE html>
 <html>
