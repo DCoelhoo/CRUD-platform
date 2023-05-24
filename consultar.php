@@ -1,8 +1,13 @@
-<?php 
-    require 'funcoes.php';
+<?php
+require 'funcoes.php';
 
-    ligardb();
+ligardb();
+
+$sql = "SELECT * FROM test WHERE ativo = 1";
+
+$result = mysqli_query($conn, $sql);
 ?>
+
 <html>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,14 +30,30 @@
 
     <h1>Tabela de Utilizadores</h1>
 
-    <?php 
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method='POST'>
+        <?php
 
-    $sql = "SELECT * FROM test WHERE ativo = 1";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo $row['nome'] . " --- " . $row['ativo'] . " --- "
+                . "<input type='submit' name='submit[" . $row['id'] . "]' value='Delete'/><br>";
+        }
+        ?>
 
-    $result = mysqli_query($conn, $sql);
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo $row['nome'] . " --- " . $row['ativo'] . "<br>";
+    </form>
+
+    <?php
+    if (isset($_POST['submit'])) {
+
+        //Este foreach contem os valores dos ids.
+        foreach ($_POST['submit'] as $id => $value) {
+
+            debug($id);
+        
+            $sqlDEL = "UPDATE `test` SET `ativo` = '0' WHERE `test`.`id` = $id";
+            $resultDEL = mysqli_query($conn, $sqlDEL);
+          }
+
     }
 
     ?>
