@@ -34,8 +34,8 @@ $result = mysqli_query($conn, $sql);
         <?php
 
         while ($row = mysqli_fetch_assoc($result)) {
-            echo $row['nome'] . " --- " . $row['ativo'] . " --- "
-                . "<input type='submit' name='submit[" . $row['id'] . "]' value='Delete'/><br>";
+            echo $row['nome'] . " --- " .  $row['email'] . " --- "
+                . $row['morada'] . " --- " . $row['ativo'] . " --- " . "<input type='submit' name='submit[" . $row['id'] . "]' value='Delete'/><br>";
         }
         ?>
 

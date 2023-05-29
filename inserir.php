@@ -31,6 +31,12 @@ ligardb();
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" required>
 
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" required>
+
+        <label for="morada">Morada:</label>
+        <input type="text" name="morada" id="morada" required>
+
         <input type="submit" name="submit" value="Enviar">
     </form>
 
@@ -44,8 +50,10 @@ ligardb();
     //verifica se o formulário foi enviado
     if (isset($_GET['submit'])) {
         $nome = $_GET['nome'];
+        $email = $_GET['email'];
+        $morada = $_GET['morada'];
 
-        $sql = "INSERT INTO test (nome, ativo) VALUES ('$nome', '1')";
+        $sql = "INSERT INTO clientes (nome, email, morada, ativo) VALUES ('$nome', '$email', '$morada', '1')";
 
         $result = mysqli_query($conn, $sql);
 
