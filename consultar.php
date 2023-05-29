@@ -3,7 +3,7 @@ require 'funcoes.php';
 
 ligardb();
 
-$sql = "SELECT * FROM test WHERE ativo = 1";
+$sql = "SELECT * FROM clientes WHERE ativo = 1";
 
 $result = mysqli_query($conn, $sql);
 ?>
@@ -50,7 +50,7 @@ $result = mysqli_query($conn, $sql);
 
             debug($id);
         
-            $sqlDEL = "UPDATE `test` SET `ativo` = '0' WHERE `test`.`id` = $id";
+            $sqlDEL = "UPDATE `clientes` SET `ativo` = '0' WHERE `clientes`.`id` = $id";
             $resultDEL = mysqli_query($conn, $sqlDEL);
           }
 
